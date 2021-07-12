@@ -22,26 +22,27 @@ function loadClient() {
 async function execute() {
   let cm = await gapi.client.youtube.commentThreads.list({
     part: ['snippet,replies'],
-    videoId: 'iSaoKqS5QiI',
+    allThreadsRelatedToChannelId: 'UCW945UjEs6Jm3rVNvPEALdg',
     maxResults: 100,
   });
 
   let npt = cm.result.nextPageToken;
-
-  while (npt) {
+  let test = 0;
+  while (test < 2) {
     npt = cm.result.nextPageToken;
     console.log(npt);
     cm = await gapi.client.youtube.commentThreads.list({
       part: ['snippet,replies'],
-      videoId: 'iSaoKqS5QiI',
+      allThreadsRelatedToChannelId: 'UCW945UjEs6Jm3rVNvPEALdg',
       maxResults: 100,
       pageToken: npt,
     });
 
     const items = cm.result.items;
     items.forEach((e) => {
-      reviews.push(`videoid/comment: ${e.snippet.videoId} / ${e.snippet.topLevelComment.snippet.textOriginal}`);
+      reviews.push(`${e.snippet.topLevelComment.snippet.textOriginal}`);
     });
+    test++;
   }
 
   console.log(reviews);
