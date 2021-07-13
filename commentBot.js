@@ -7,6 +7,9 @@
 //여기에 코멘트들을 다 모을거임
 let reviews = [];
 
+// 여기에 유튜브 채널 아이디 박으면 됩니당~~.
+const channelID = 'UCW945UjEs6Jm3rVNvPEALdg';
+
 function loadClient() {
   gapi.client.setApiKey('AIzaSyBXqQ4eTUvkVcTKOtx2Gz2IiLvvoBrkE3g');
   return gapi.client.load('https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest').then(
@@ -22,18 +25,18 @@ function loadClient() {
 async function execute() {
   let cm = await gapi.client.youtube.commentThreads.list({
     part: ['snippet,replies'],
-    allThreadsRelatedToChannelId: 'UCW945UjEs6Jm3rVNvPEALdg',
+    allThreadsRelatedToChannelId: channelID,
     maxResults: 100,
   });
 
   let npt = cm.result.nextPageToken;
-  let test = 0;
-  while (test < 2) {
+  // let test = 0;
+  while (npt) {
     npt = cm.result.nextPageToken;
     console.log(npt);
     cm = await gapi.client.youtube.commentThreads.list({
       part: ['snippet,replies'],
-      allThreadsRelatedToChannelId: 'UCW945UjEs6Jm3rVNvPEALdg',
+      allThreadsRelatedToChannelId: channelID,
       maxResults: 100,
       pageToken: npt,
     });
@@ -42,10 +45,13 @@ async function execute() {
     items.forEach((e) => {
       reviews.push(`${e.snippet.topLevelComment.snippet.textOriginal}`);
     });
-    test++;
+    // test++;
   }
 
-  console.log(reviews);
+  // console.log(reviews);
+
+  const result = reviews.join('\n');
+  console.log(result);
 }
 
 gapi.load('client');
