@@ -33,3 +33,7 @@ activity 리소스에는 특정 채널이나 사용자가 YouTube에서 실행�
 [playlistItems](https://developers.google.com/youtube/v3/docs/?apix=true#PlaylistItems)
 
 광고영상과 같은 특별한 영상에서는 댓글창이 평소와 같지 않을 수 있음. 동영상에 필터링이 필요하다면 이걸로 동영상을 걸러보도록 하자.
+
+## 1. 우정잉(friendshiping)
+
+[![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/teachable-ainize/gpt2-train)

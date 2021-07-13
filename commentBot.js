@@ -33,7 +33,7 @@ async function execute() {
   // let test = 0;
   while (npt) {
     npt = cm.result.nextPageToken;
-    console.log(npt);
+    // console.log(npt);
     cm = await gapi.client.youtube.commentThreads.list({
       part: ['snippet,replies'],
       allThreadsRelatedToChannelId: channelID,
