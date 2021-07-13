@@ -34,6 +34,13 @@ activity 리소스에는 특정 채널이나 사용자가 YouTube에서 실행�
 
 광고영상과 같은 특별한 영상에서는 댓글창이 평소와 같지 않을 수 있음. 동영상에 필터링이 필요하다면 이걸로 동영상을 걸러보도록 하자.
 
-## 1. 우정잉(friendshiping)
+## 1. 우정잉(friendshiping) (2021/7/13)
 
 [![Run on Ainize](https://ainize.ai/images/run_on_ainize_button.svg)](https://ainize.web.app/redirect?git_repo=https://github.com/teachable-ainize/gpt2-train)
+
+tabtab에서 해보기!:
+https://kubecon-tabtab-ainize-team.endpoint.ainize.ai/?modelUrl=https://train-bfqcp242hi6p1u8163ox-gpt2-train-teachable-ainize.endpoint.ainize.ai/predictions/gpt-2-ko-small-finetune
+
+#### 추가로 해야 할 것
+
+문장단위로 끊어서 생성되도록 하고 싶은데 무작위로 생성되는 느낌이 있음. tabtab document 읽으면서 문장 단위로 끊어 쓸 수 있도록 해보자~!
