@@ -11,7 +11,7 @@ let reviews = [];
 const channelID = 'UC0aKwoKNeqBaUwiEXmkQaGQ';
 
 function loadClient() {
-  gapi.client.setApiKey('AIzaSyBXqQ4eTUvkVcTKOtx2Gz2IiLvvoBrkE3g');
+  gapi.client.setApiKey('[your API key]');
   return gapi.client.load('https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest').then(
     function () {
       console.log('GAPI client loaded for API');
